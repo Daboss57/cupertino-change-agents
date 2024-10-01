@@ -3,7 +3,7 @@ export default function WhatWeDo() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">What do we do</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">What We Do</h2>
         <p className="text-center mb-12 text-gray-600">We help children, families, and communities by raising funds through different drives and events.</p>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
@@ -31,7 +31,7 @@ export default function WhatWeDo() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-center mb-2 text-gray-800">SPECIAL PROGRAMS</h3>
-            <p className="text-center text-gray-600">Drives and fundraisers aren't the only initiatives we do! We also organize numerous engaging and special activities throughout the year to help our communities in creative ways.</p>
+            <p className="text-center text-gray-600">Drives and fundraisers aren&#39;t the only initiatives we do! We also organize numerous engaging and special activities throughout the year to help our communities in creative ways.</p>
           </div>
         </div>
       </div>

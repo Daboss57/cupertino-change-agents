@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import WhatWeDo from '@/components/WhatWeDo'
 import PortfolioSection from '@/components/PortfolioSection'
@@ -25,7 +24,7 @@ export default function Home() {
       <section id="hero" className="flex flex-col justify-center items-center min-h-screen bg-cover bg-center relative" style={{backgroundImage: `url(${ABC.src})`}}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="container text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">"Be the change you want to see in the world"</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">&quot;Be the change you want to see in the world&quot;</h1>
           <Link href="#about" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" data-aos="fade-up" data-aos-delay="200">
             Learn More
           </Link>
@@ -50,7 +49,7 @@ export default function Home() {
                     <i className="bx bx-heart"></i>
                   </div>
                   <h4 className="text-xl font-semibold mb-2 text-gray-800">Kindness</h4>
-                  <p className="text-gray-700">Acts of kindness increase energy and give a wonderful feeling of optimism. Kindness helps children's mental health, their resilience, as well as their peak performance.</p>
+                  <p className="text-gray-700">Acts of kindness increase energy and give a wonderful feeling of optimism. Kindness helps children&#39;s mental health, their resilience, as well as their peak performance.</p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
                   <div className="text-4xl text-orange-500 mb-4">

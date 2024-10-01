@@ -21,8 +21,7 @@ export default function OfferingsPage() {
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Programs</h2>
           <p className="text-center mb-12 text-gray-600 max-w-2xl mx-auto">
             Explore our diverse range of programs and initiatives designed to make a lasting impact 
-            in our community. From donation drives to special activities, we're committed to creating 
-            positive change.
+            in our community. From donation drives to special activities, we&#39;re committed to creating positive change.
           </p>
           <PortfolioSection />
         </div>
@@ -34,7 +33,7 @@ export default function OfferingsPage() {
           <p className="text-center mb-12 text-gray-600 max-w-2xl mx-auto">
             Your support can make a significant difference. Join us in our mission to create a better 
             community for all. Whether you want to volunteer, donate, or participate in our events, 
-            there's a place for you in our organization.
+            there&#39;s a place for you in our organization.
           </p>
           <div className="flex justify-center">
             <a href="/donate" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">

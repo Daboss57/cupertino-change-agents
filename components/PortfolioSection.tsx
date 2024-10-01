@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import AddPortfolioModal from './AddPortfolioModal'
 
 interface PortfolioItem {
@@ -47,10 +46,6 @@ export default function PortfolioSection() {
   }
 
   const filteredItems = filter === 'all' ? portfolioItems : portfolioItems.filter(item => item.category === filter)
-
-  const isExternalLink = (url: string) => {
-    return url.startsWith('http://') || url.startsWith('https://')
-  }
 
   return (
     <section className="py-16 bg-gray-100">
