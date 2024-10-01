@@ -1,6 +1,7 @@
 // app/layout.tsx
 import '@/app/globals.css'
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
