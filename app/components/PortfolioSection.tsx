@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import AddPortfolioModal from './AddPortfolioModal'
 
@@ -12,43 +12,59 @@ interface PortfolioItem {
   link: string
 }
 
-const initialItems: PortfolioItem[] = [
-  {
-    id: 1,
-    title: "Meals for Moms",
-    category: "drives",
-    images: ["/assets/img/portfolio/MFM.jpg"],
-    link: "https://example.com/meals-for-moms"
-  },
-  {
-    id: 2,
-    title: "Used Book Sale",
-    category: "fundraisers",
-    images: ["/assets/img/portfolio/UB-1.jpg"],
-    link: "https://example.com/used-book-sale"
-  },
-  {
-    id: 3,
-    title: "Letters of Love for Elders",
-    category: "special",
-    images: ["/assets/img/portfolio/LL-1.jpg"],
-    link: "https://example.com/letters-of-love"
-  },
-]
-
 export default function PortfolioSection() {
-  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>(initialItems)
+  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([])
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [filter, setFilter] = useState('all')
+  const [isLoading, setIsLoading] = useState(true)
 
-  const addPortfolioItem = (newItem: PortfolioItem) => {
-    setPortfolioItems([...portfolioItems, { ...newItem, id: Date.now() }])
+  useEffect(() => {
+    const loadItems = async () => {
+      try {
+        const response = await fetch('/api/portfolio')
+        const data = await response.json()
+        console.log('Loaded data:', data) // Debug log
+        if (data.items) {
+          setPortfolioItems(data.items)
+        }
+      } catch (error) {
+        console.error('Error loading items:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadItems()
+  }, [])
+
+  const addPortfolioItem = async (newItem: Omit<PortfolioItem, 'id'>) => {
+    const itemWithId = { ...newItem, id: Date.now() }
+    
+    try {
+      const response = await fetch('/api/portfolio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(itemWithId),
+      })
+
+      if (!response.ok) throw new Error('Failed to save')
+      
+      // Update local state
+      setPortfolioItems(prev => [...prev, itemWithId])
+      setIsModalOpen(false) // Close modal after successful add
+    } catch (error) {
+      console.error('Error saving portfolio item:', error)
+      alert('Failed to save the portfolio item. Please try again.')
+    }
   }
 
   const filteredItems = filter === 'all' ? portfolioItems : portfolioItems.filter(item => item.category === filter)
 
+  // Rest of your component remains the same...
   return (
-    <section className="py-16 bg-gray-100">
+     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Programs</h2>
         <p className="text-center mb-12 text-gray-600">CCA runs multiple programs throughout the year. This is a portfolio of such events</p>

@@ -1,5 +1,5 @@
-import WhatWeDo from '@/components/WhatWeDo'
-import PortfolioSection from '@/components/PortfolioSection'
+import WhatWeDo from '@/app/components/WhatWeDo'
+import PortfolioSection from '@/app/components/PortfolioSection'
 
 export default function OfferingsPage() {
   return (
@@ -23,7 +23,6 @@ export default function OfferingsPage() {
             Explore our diverse range of programs and initiatives designed to make a lasting impact 
             in our community. From donation drives to special activities, we&#39;re committed to creating positive change.
           </p>
-          <PortfolioSection />
         </div>
       </section>
 

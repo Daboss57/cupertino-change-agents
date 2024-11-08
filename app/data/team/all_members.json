@@ -1,0 +1,53 @@
+{
+  "teamMembers": [
+    {
+      "name": "Sikta Khastagir",
+      "role": "FOUNDER & PRESIDENT",
+      "image": "sikta.webp",
+      "bio": "Sikta has been associated with the education world for a long time. With more than a decade of working experience with young children and her passion for volunteering in several service projects, Sikta has always believed in nurturing important soft skills like compassion, kindness, and empathy in young lives. Her dream of a world where love knows no bounds was the foundation brick of the Cupertino Change Agents. Along with her passion for influencing young lives, Sikta is also a talented cook and baker.",
+      "order": 1
+    },
+    {
+      "name": "Ramita Chouhan",
+      "role": "SECRETARY",
+      "image": "ramita.webp",
+      "bio": "A software test engineer by profession, Ramita has a dream to give back to the community right from the early days of her childhood. Cupertino Change Agents helped give wings to her intentions of doing something for the underprivileged citizens of society. Ramita feels motivated by the potential that Cupertino Change Agents holds and all that it can accomplish in the coming years. Along with working with the local community, Ramita also enjoys health and wellness.",
+      "order": 2
+    },
+    {
+      "name": "Sai Niveda Purushothaman",
+      "role": "EXECUTIVE DIRECTOR",
+      "image": "sai.webp",
+      "bio": "Working as a Program Management Professional with an education background in Computer Applications,Sai has been associated with multiple NGOs in different capacities since her childhood days.This experience not only gave her an opportunity to create a huge impact in lots of people in the community, but also provided her with deep appreciation working towards improving their quality of life.When she is not at work,she enjoys singing & listening to music.",
+      "order": 3
+    },
+    {
+      "name": "Somy Mathew",
+      "role": "EXECUTIVE DIRECTOR",
+      "image": "somy.webp",
+      "bio": "A paraeducator by profession and dentist by qualification, Somy has been working with special-needs children for a long time. She has always wanted to give back to society and Cupertino Change Agents gave her the right platform to do so. She loves being part of a youthed organization as she believes that children are the future. When she's not working with children, she loves cooking and baking.",
+      "order": 4
+    },
+    {
+      "name": "Saloni Arora",
+      "role": "MEMBER",
+      "image": "saloni.webp",
+      "bio": "With a master's degree in commerce and a background in education, Saloni has always aspired to positively impact young lives. She is committed and passionate about working in partnership with children in order to build a community of goodness, empathy, and respect. Along with her dedication to the Cupertino Change Agents family, Saloni loves good music and meeting new people!",
+      "order": 5
+    },
+    {
+      "name": "Rishita Arora",
+      "role": "MEMBER",
+      "image": "rishita.webp",
+      "bio": "Holding multiple marketing positions including Marketing and Design Director position for Davis Women in Business, and Marketing Strategy Assistant for UC Davis CIS, Rishita has always been passionate about giving back to the community. Rishita views CCA as an opportunity to bring a change and work towards a bigger impact in the society. When she's not working, Rishita spends time sketching, creating digital art and hanging out with friends and family!",
+      "order": 6
+    },
+    {
+      "name": "Anusha Purohit",
+      "role": "MEMBER",
+      "image": "anusha.webp",
+      "bio": "Anusha is an ex Big 4 Audit professional and a Certified Chartered Accountant. A proud mother of 2 kids who inherit empathy as a deeply ingrained core value, Anusha is passionate about what makes us humane and committed to its impact on making our surrounding environment a better place to be. A believer in the magic of spreading smiles, she also enjoys cooking, long walks and listening to podcasts.",
+      "order": 7
+    }
+  ]
+}

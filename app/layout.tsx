@@ -3,8 +3,8 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 

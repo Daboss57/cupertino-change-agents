@@ -1,12 +1,14 @@
-'use client'
+"use client"
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const router = useRouter()
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -21,6 +23,18 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    if (router) {
+      const section = document.getElementById(sectionId)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        router.push(`/#${sectionId}`)
+      }
+      setIsDropdownOpen(false)
+    }
+  }
 
   return (
     <header>
@@ -43,7 +57,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <nav className="bg-white shadow-md">
+      <nav className="bg-white shadow-md relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
@@ -64,17 +78,17 @@ export default function Header() {
                   </svg>
                 </button>
                 {isDropdownOpen && (
-                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                      <Link href="/#about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Our Story</Link>
-                      <Link href="/#team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Our Team</Link>
+                      <button onClick={() => scrollToSection('video-about')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Our Story</button>
+                      <button onClick={() => scrollToSection('video-about')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Our Team</button>
                     </div>
                   </div>
                 )}
               </div>
               <Link href="/offerings" className="text-gray-800 hover:text-orange-500">What We Do</Link>
-              <Link href="/#contact" className="text-gray-800 hover:text-orange-500">Get Involved</Link>
-              <Link href="/#contact" className="text-gray-800 hover:text-orange-500">Contact Us</Link>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-800 hover:text-orange-500">Get Involved</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-800 hover:text-orange-500">Contact Us</button>
             </div>
             <div className="md:hidden">
               <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800 hover:text-orange-500">
@@ -82,7 +96,7 @@ export default function Header() {
                   {isOpen ? (
                     <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
                   ) : (
-                    <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+                    <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z" />
                   )}
                 </svg>
               </button>
@@ -100,13 +114,13 @@ export default function Header() {
             </button>
             {isDropdownOpen && (
               <>
-                <Link href="/#about" className="block py-2 px-8 text-sm hover:bg-gray-200">Our Story</Link>
-                <Link href="/#team" className="block py-2 px-8 text-sm hover:bg-gray-200">Our Team</Link>
+                <button onClick={() => scrollToSection('video-about')} className="block py-2 px-8 text-sm hover:bg-gray-200">Our Story</button>
+                <button onClick={() => scrollToSection('video-about')} className="block py-2 px-8 text-sm hover:bg-gray-200">Our Team</button>
               </>
             )}
             <Link href="/offerings" className="block py-2 px-4 text-sm hover:bg-gray-200">What We Do</Link>
-            <Link href="/#contact" className="block py-2 px-4 text-sm hover:bg-gray-200">Get Involved</Link>
-            <Link href="/#contact" className="block py-2 px-4 text-sm hover:bg-gray-200">Contact Us</Link>
+            <button onClick={() => scrollToSection('contact')} className="block py-2 px-4 text-sm hover:bg-gray-200">Get Involved</button>
+            <button onClick={() => scrollToSection('contact')} className="block py-2 px-4 text-sm hover:bg-gray-200">Contact Us</button>
           </div>
         )}
       </nav>
